@@ -1,0 +1,12 @@
+name: PR Pipeline
+
+on:
+    push:
+        branches: main
+
+jobs:
+    call-build-test:
+        runs-on: ubuntu-latest
+
+    call-docker:
+        runs-on: ubuntu-latest
