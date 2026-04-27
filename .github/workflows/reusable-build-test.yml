@@ -2,6 +2,17 @@ name: Build & Test
 
 on:
     workflow_call:
+        inputs:
+            python_version:
+                type: string
+                required: false
+                default: ""
+
+            run_tests:
+                type: boolean
+                required: false
+                default: true
+
 
 jobs:
     build-and-test:
@@ -10,7 +21,7 @@ jobs:
             - name: Checkout Code
               uses: actions/checkout@v4
 
-            - name: Set up the language runtime
+            - name: Set up Python ${{ inputs.python_version }}
               run:
 
             - name: Install Dependencies
