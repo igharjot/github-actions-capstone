@@ -4,5 +4,20 @@ on:
     workflow_call:
 
 jobs:
-    build:
+    build-and-test:
         runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v4
+
+            - name: Set up the language runtime
+              run:
+
+            - name: Install Dependencies
+              run:    
+
+            - name: Run tests
+              run: |
+
+            - name: Output
+              run:
