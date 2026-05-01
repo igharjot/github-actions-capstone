@@ -12,11 +12,19 @@ on:
                 type: boolean
                 required: false
                 default: true
-
+        outputs:
+            test_result:
+                description: "Result of the test run: 'passed' or 'failed'"
+                value: ${{ jobs.build-test.outputs.test_result }}    
+            
 
 jobs:
     build-and-test:
         runs-on: ubuntu-latest
+
+        outputs:
+            test_result: ${{ steps.set-result.outputs.test_result }}
+
         steps:
             - name: Checkout Code
               uses: actions/checkout@v4
